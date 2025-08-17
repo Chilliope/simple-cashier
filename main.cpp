@@ -48,7 +48,20 @@ int main() {
         if (option == 1) {
             int n;
             cout << "Please enter the number of products you entered: ";
-            cin >> n;
+
+            while (true)
+            {
+                cin >> n;
+                if (cin.fail())
+                {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "Please enter the number of products you entered!!!: ";
+                } else
+                {
+                    break;
+                }
+            }
 
             for (int i = 0; i < n; i++) {
                 Product p;
